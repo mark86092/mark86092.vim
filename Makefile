@@ -21,4 +21,4 @@ vundle-update: install-vundle install-vimrc
 .PHONY: clean
 clean:
 	$(RM) $(HOME)/.vimrc
-	$(RM) -r $(VundlePATH)
+	$(RM) -r $(HOME)/.vim
