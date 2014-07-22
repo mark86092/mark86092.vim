@@ -1,24 +1,28 @@
-VundlePATH = $(HOME)/.vim/bundle/Vundle.vim
+Vundle := $(HOME)/.vim/bundle/Vundle.vim
+vimrc := $(HOME)/.vimrc
 
-.PHONY: install-vundle install-vimrc all
-all: vundle-update
+.PHONY: all
+all:
 
 # See the doc here: https://github.com/gmarik/Vundle.vim
-install-vundle:
-	test -d $(VundlePATH) || git clone git@github.com:gmarik/Vundle.vim.git $(VundlePATH)
+$(Vundle):
+	git clone git@github.com:gmarik/Vundle.vim.git $(Vundle)
 
-# Before install vimrc, you should install Vundle
-install-vimrc: $(HOME)/.vimrc install-vundle
-
-$(HOME)/.vimrc: vimrc
-	$(RM) $@
+$(vimrc): vimrc
 	ln -s $(PWD)/vimrc $@
 
-.PHONY: vundle-update
-vundle-update: install-vundle install-vimrc
+.PHONY: Vundle
+Vundle: | $(Vundle)
+
+.PHONY: basic-install update install
+basic-install: Vundle $(vimrc)
+
+update: basic-install
 	vim +PluginInstall! +qall
+
+install: update
 
 .PHONY: clean
 clean:
-	$(RM) $(HOME)/.vimrc
+	$(RM) $(vimrc)
 	$(RM) -r $(HOME)/.vim
