@@ -6,7 +6,7 @@ all: update
 
 # See the doc here: https://github.com/gmarik/Vundle.vim
 $(Vundle):
-	git clone git@github.com:gmarik/Vundle.vim.git $(Vundle)
+	git clone https://github.com/gmarik/Vundle.vim.git $(Vundle)
 
 $(vimrc): vimrc
 	ln -s $(PWD)/vimrc $@
