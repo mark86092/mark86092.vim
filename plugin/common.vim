@@ -14,7 +14,6 @@ set backspace=eol,start,indent
 set fileencodings=utf-8
 set helplang=en
 set ruler
-set runtimepath=~/.vim,~/.vim/bundle/Vundle.vim,~/.vim/bundle/molokai,~/.vim/bundle/mark86092.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after,~/.vim/bundle/Vundle.vim,~/.vim/bundle/Vundle.vim/after,~/.vim/bundle/molokai/after,~/.vim/bundle/mark86092.vim/after
 set scrolloff=7
 set shiftwidth=4
 set showmatch
