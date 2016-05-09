@@ -22,6 +22,8 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set tabstop=4
 set textwidth=500
 
+set expandtab
+
 " 狀態列的行數，預設一行
 set cmdheight=1
 
